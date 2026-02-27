@@ -100,8 +100,11 @@ namespace GPUHud
             _atlasManager.Initialize();
 
             // 初始化 SDF 字符查表（使用默认数字字符）
+            // Atlas 布局：数字 0-9 绘制在 Atlas 顶部（y=960~1024 of 1024px）
+            // UV 区域：x=0, y=960/1024=0.9375, 每字符宽=64/1024=0.0625
+            // 12 个字符总宽=12*0.0625=0.75, 高=64/1024=0.0625
             _charLookup = new SDFCharLookup();
-            _charLookup.InitializeWithDefaults(new Vector4(0f, 0f, 1f, 0.1f));
+            _charLookup.InitializeWithDefaults(new Vector4(0f, 0.9375f, 0.75f, 0.0625f));
 
             // 初始化数据存储
             _dataStore = new HUDDataStore();
@@ -256,7 +259,7 @@ namespace GPUHud
             for (int i = 0; i < count && _unitCount < HUDConstants.MaxUnits; i++)
             {
                 // 使用简单的默认名称（避免 string 分配，实际项目从数据表读取）
-                RegisterUnit(positions[i], null, 1f, i);
+                RegisterUnit(positions[i], "1234", 1f, i);
             }
 
             // 批量完成后全量上传一次

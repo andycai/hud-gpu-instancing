@@ -1,1 +1,10 @@
 .worktree/
+.idea/
+Library/
+obj/
+Temp/
+Logs/
+UserSettings/
+*.csproj
+*.sln
+*.user

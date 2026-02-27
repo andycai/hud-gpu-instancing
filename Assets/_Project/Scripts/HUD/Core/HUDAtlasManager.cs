@@ -134,7 +134,8 @@ namespace GPUHud
         /// </summary>
         private IEnumerator LoadAvatarCoroutine(int uid, int sliceIndex)
         {
-            string url = $"{_cdnBaseUrl}/avatars/{uid}.png";
+            string url = $"{_cdnBaseUrl}/avatars/avatar_test_{uid%8}.png";
+            // UnityEngine.Debug.LogError($"===== avatar url: {url}");
 
             using var request = UnityWebRequestTexture.GetTexture(url);
             yield return request.SendWebRequest();

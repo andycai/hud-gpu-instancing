@@ -47,31 +47,31 @@ namespace GPUHud
         // === HUD 布局（像素偏移，以锚点为中心） ===
 
         /// <summary>头像 Y 偏移</summary>
-        public const float AvatarOffsetY = 40f;
+        public const float AvatarOffsetY = 60f;
 
         /// <summary>头像大小</summary>
-        public const float AvatarDisplaySize = 32f;
+        public const float AvatarDisplaySize = 48f;
 
         /// <summary>血条 Y 偏移</summary>
-        public const float HealthBarOffsetY = 20f;
+        public const float HealthBarOffsetY = 30f;
 
         /// <summary>血条宽度</summary>
-        public const float HealthBarWidth = 48f;
+        public const float HealthBarWidth = 64f;
 
         /// <summary>血条高度</summary>
-        public const float HealthBarHeight = 6f;
+        public const float HealthBarHeight = 8f;
 
         /// <summary>名字 Y 偏移</summary>
-        public const float NameOffsetY = 8f;
+        public const float NameOffsetY = 12f;
 
         /// <summary>名字字符大小</summary>
-        public const float NameCharSize = 10f;
+        public const float NameCharSize = 28f;
 
         /// <summary>图标 Y 偏移</summary>
-        public const float IconOffsetY = 52f;
+        public const float IconOffsetY = 80f;
 
         /// <summary>图标大小</summary>
-        public const float IconDisplaySize = 16f;
+        public const float IconDisplaySize = 24f;
 
         // === 名字系统 ===
 
@@ -90,7 +90,7 @@ namespace GPUHud
         public const float FloatTextBounceScale = 0.3f;
 
         /// <summary>飘血字符大小</summary>
-        public const float FloatTextCharSize = 14f;
+        public const float FloatTextCharSize = 32f;
 
         /// <summary>飘血暴击字符大小倍率</summary>
         public const float FloatTextCritScale = 1.5f;

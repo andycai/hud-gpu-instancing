@@ -17,6 +17,7 @@ namespace GPUHud.Demo
         [Header("测试配置")]
         [SerializeField] private int _unitCount = 10000;
         [SerializeField] private float _spacing = 3f;
+        [SerializeField] private float _yDistance = 10f;
         [SerializeField] private bool _animatePositions = false;
         [SerializeField] private bool _randomDamage = true;
         [SerializeField] private float _damageInterval = 0.1f;
@@ -42,7 +43,7 @@ namespace GPUHud.Demo
                 int z = i / _gridSize;
                 _unitPositions[i] = new Vector3(
                     (x - _gridSize * 0.5f) * _spacing,
-                    0f,
+                    _yDistance,
                     (z - _gridSize * 0.5f) * _spacing
                 );
             }
