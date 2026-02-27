@@ -18,8 +18,14 @@ namespace GPUHud
         /// <summary>每个单位的平均 Instance 数量</summary>
         public const int InstancesPerUnit = 16;
 
-        /// <summary>最大 Instance 总数</summary>
+        /// <summary>常规 Instance 最大总数（不含飘血）</summary>
         public const int MaxInstances = MaxUnits * InstancesPerUnit; // 160,000
+
+        /// <summary>飘血 Instance 总数</summary>
+        public const int FloatTextInstances = FloatTextPoolSize * FloatTextMaxDigits; // 3,072
+
+        /// <summary>Buffer 总容量（常规 + 飘血）</summary>
+        public const int MaxTotalInstances = MaxInstances + FloatTextPoolSize * FloatTextMaxDigits; // 163,072
 
         /// <summary>每个 Chunk 包含的 Instance 数量</summary>
         public const int ChunkSize = 256;

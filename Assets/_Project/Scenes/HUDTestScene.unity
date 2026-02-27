@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8b21d87821c4db6b094ce41bbdde22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitCount: 5000
+  _unitCount: 10000
   _spacing: 5
   _yDistance: 0
   _animatePositions: 0

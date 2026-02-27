@@ -47,7 +47,7 @@ namespace GPUHud
         {
             // 一次性分配所有 NativeArray（Persistent 生命周期）
             _instanceData = new NativeArray<HUDInstanceData>(
-                HUDConstants.MaxInstances, Allocator.Persistent,
+                HUDConstants.MaxTotalInstances, Allocator.Persistent,
                 NativeArrayOptions.ClearMemory);
 
             _floatTextData = new NativeArray<FloatingTextData>(
@@ -62,7 +62,7 @@ namespace GPUHud
 
             // 创建 GPU ComputeBuffer
             _instanceBuffer = new ComputeBuffer(
-                HUDConstants.MaxInstances, HUDInstanceData.Stride);
+                HUDConstants.MaxTotalInstances, HUDInstanceData.Stride);
 
             _floatTextBuffer = new ComputeBuffer(
                 HUDConstants.FloatTextPoolSize, FloatingTextData.Stride);
@@ -80,7 +80,8 @@ namespace GPUHud
         /// </summary>
         public HUDDataStore()
         {
-            _chunkDirty = new bool[HUDConstants.ChunkCount];
+            // Chunk 数量覆盖全部 Instance（含飘血区域）
+            _chunkDirty = new bool[HUDConstants.MaxTotalInstances / HUDConstants.ChunkSize + 1];
         }
 
         // ====================================================================
@@ -108,7 +109,7 @@ namespace GPUHud
         /// </summary>
         public void SetActiveInstanceCount(int count)
         {
-            _activeInstanceCount = Mathf.Min(count, HUDConstants.MaxInstances);
+            _activeInstanceCount = Mathf.Min(count, HUDConstants.MaxTotalInstances);
         }
 
         /// <summary>
