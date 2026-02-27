@@ -65,7 +65,7 @@ namespace GPUHud
         public const float NameOffsetY = 12f;
 
         /// <summary>名字字符大小</summary>
-        public const float NameCharSize = 28f;
+        public const float NameCharSize = 20f;
 
         /// <summary>图标 Y 偏移</summary>
         public const float IconOffsetY = 80f;
@@ -90,7 +90,7 @@ namespace GPUHud
         public const float FloatTextBounceScale = 0.3f;
 
         /// <summary>飘血字符大小</summary>
-        public const float FloatTextCharSize = 32f;
+        public const float FloatTextCharSize = 28f;
 
         /// <summary>飘血暴击字符大小倍率</summary>
         public const float FloatTextCritScale = 1.5f;

@@ -142,13 +142,15 @@ namespace GPUHud
                 new Vector3(-0.5f,  0.5f, 0f),
             };
 
-            // UV
+            // UV（Y 翻转：适配 Metal/macOS 等 Y-flip 平台）
+            // 在这些平台上，投影矩阵翻转了 Y 轴，导致 Quad 顶点位置与 UV 方向不匹配
+            // 通过翻转 UV.y 来补偿：底部顶点 v=1（采样纹理顶部），顶部顶点 v=0（采样底部）
             var uvs = new Vector2[]
             {
-                new Vector2(0f, 0f),
-                new Vector2(1f, 0f),
-                new Vector2(1f, 1f),
                 new Vector2(0f, 1f),
+                new Vector2(1f, 1f),
+                new Vector2(1f, 0f),
+                new Vector2(0f, 0f),
             };
 
             // 三角形索引（使用 TriangleStrip 替代，但 DrawMeshInstancedIndirect 要求 Triangle）
